@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SEO Status Checker</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='/css/style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<header class="page-header">
+
+    <h1>SEO Status Checker</h1>
+
+    <p>Fast HTTP Status Code Checker</p>
+
+</header>
+
+<main class="container">
+
+    <section class="input-section">
+
+        <label for="urls">
+            URLs (one per line)
+        </label>
+
+        <textarea
+            id="urls"
+            rows="12"
+            placeholder="google.com&#10;github.com&#10;openai.com"
+        ></textarea>
+
+        <div class="buttons">
+
+            <button id="check-button">
+                Check
+            </button>
+
+            <button id="clear-button">
+                Clear
+            </button>
+
+        </div>
+
+    </section>
+
+    <section class="stats-section">
+
+        <div class="stat-card">
+            <span>Total</span>
+            <strong id="total-count">0</strong>
+        </div>
+
+        <div class="stat-card success">
+            <span>2xx</span>
+            <strong id="success-count">0</strong>
+        </div>
+
+        <div class="stat-card redirect">
+            <span>3xx</span>
+            <strong id="redirect-count">0</strong>
+        </div>
+
+        <div class="stat-card client-error">
+            <span>4xx</span>
+            <strong id="client-error-count">0</strong>
+        </div>
+
+        <div class="stat-card server-error">
+            <span>5xx</span>
+            <strong id="server-error-count">0</strong>
+        </div>
+
+    </section>
+
+    <section class="controls-section">
+
+        <input
+            id="search"
+            type="text"
+            placeholder="Search by URL..."
+        >
+
+    </section>
+
+    <section class="table-section">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th
+                        class="sortable"
+                        data-sort="url"
+                    >
+                        URL
+                        <span class="sort-icon">⇅</span>
+                    </th>
+
+                    <th
+                        class="sortable"
+                        data-sort="status"
+                    >
+                        Status Code
+                        <span class="sort-icon">⇅</span>
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                    <th
+                        class="sortable"
+                        data-sort="time"
+                    >
+                        Response Time
+                        <span class="sort-icon">⇅</span>
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="results-body">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+</main>
+
+<script src="{{ url_for('static', path='/js/app.js') }}"></script>
+
+</body>
+
+</html>

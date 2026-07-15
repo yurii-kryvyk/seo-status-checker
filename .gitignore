@@ -1,0 +1,43 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+
+# Python
+.python-version
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Mypy
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# Temporary
+*.tmp
+*.bak
+
+# Environment variables
+.env
