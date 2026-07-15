@@ -2,7 +2,7 @@ import asyncio
 import time
 from urllib.parse import urlparse
 import httpx
-from schemas import StatusCategory, UrlResult, UrlStatus
+from schemas.url import StatusCategory, UrlResult, UrlStatus
 
 
 

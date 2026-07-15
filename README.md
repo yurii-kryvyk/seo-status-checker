@@ -35,19 +35,22 @@ Built with **FastAPI**, **httpx**, **HTML**, **CSS**, and **JavaScript**.
 seo-status-checker/
 │
 ├── main.py
-├── schemas.py
+│
+├── schemas/
+│   ├── __init__.py
+│   └── url.py
+│
 ├── services/
 │   ├── __init__.py
 │   └── checker.py
 │
 ├── static/
-│   ├── css/
-│   └── js/
 │
 ├── templates/
 │
+├── README.md
 ├── requirements.txt
-└── README.md
+└── LICENSE
 ```
 
 ## Installation

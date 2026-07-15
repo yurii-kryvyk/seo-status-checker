@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from schemas import UrlResult, UrlsRequest
+from schemas.url import UrlResult, UrlsRequest
 from services.checker import check_urls
 
 
