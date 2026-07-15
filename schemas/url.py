@@ -1,6 +1,6 @@
 from enum import Enum
-
 from pydantic import BaseModel, Field
+
 
 
 class UrlStatus(str, Enum):
@@ -25,29 +25,29 @@ class StatusCategory(str, Enum):
 
 class UrlsRequest(BaseModel):
     urls: list[str] = Field(
-        description="Список URL для проверки."
+        description="List of URLs to check"
     )
 
 
 class UrlResult(BaseModel):
     url: str = Field(
-        description="Проверяемый URL."
+        description="URL being checked"
     )
 
     status_code: int | None = Field(
         default=None,
-        description="HTTP-статус ответа."
+        description="HTTP response status"
     )
 
     response_time: float | None = Field(
         default=None,
-        description="Время ответа в миллисекундах."
+        description="Response time"
     )
 
     status: UrlStatus = Field(
-        description="Текстовое описание результата."
+        description="Textual description of the result"
     )
 
     category: StatusCategory = Field(
-        description="Категория для отображения на фронтенде."
+        description="Category for display on the frontend"
     )

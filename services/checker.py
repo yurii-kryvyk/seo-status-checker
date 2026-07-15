@@ -14,14 +14,7 @@ DEFAULT_HEADERS: dict[str, str] = {
 
 
 def normalize_url(url: str) -> str | None:
-    """
-    Нормализует один URL.
-
-    - удаляет пробелы;
-    - приводит к нижнему регистру;
-    - добавляет https:// при отсутствии схемы.
-    """
-
+   
     normalized_url = url.strip().lower()
 
     if not normalized_url:
@@ -36,13 +29,6 @@ def normalize_url(url: str) -> str | None:
 
 
 def prepare_urls(urls: list[str]) -> list[str]:
-    """
-    Подготавливает список URL к проверке.
-
-    - нормализует URL;
-    - удаляет пустые строки;
-    - удаляет дубликаты с сохранением порядка.
-    """
 
     prepared_urls: list[str] = []
     seen_urls: set[str] = set()
@@ -63,10 +49,7 @@ def prepare_urls(urls: list[str]) -> list[str]:
 def get_status_info(
     status_code: int,
 ) -> tuple[UrlStatus, StatusCategory]:
-    """
-    Возвращает текстовый статус и его категорию
-    по HTTP-коду ответа.
-    """
+
 
     if 200 <= status_code < 300:
         return UrlStatus.OK, StatusCategory.SUCCESS
@@ -90,9 +73,7 @@ def create_error_result(
     status: UrlStatus,
     category: StatusCategory,
 ) -> UrlResult:
-    """
-    Создает объект результата проверки при ошибке.
-    """
+    
 
     return UrlResult(
         url=url,
@@ -107,9 +88,7 @@ async def check_url(
     client: httpx.AsyncClient,
     url: str,
 ) -> UrlResult:
-    """
-    Проверяет доступность одного URL.
-    """
+    
 
     start_time = time.perf_counter()
 
@@ -167,9 +146,7 @@ async def check_url(
 async def check_urls(
     urls: list[str],
 ) -> list[UrlResult]:
-    """
-    Проверяет список URL параллельно.
-    """
+    
 
     prepared_urls = prepare_urls(urls)
 
